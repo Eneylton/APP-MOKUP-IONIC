@@ -1,23 +1,28 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="danger">
     <ion-title>Home</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
- 
-  <button ion-button icon-only small color="danger">    
-    <ion-icon class="fa-battery-1"></ion-icon>   
- </button>    
- <button ion-button icon-only color="primary">    
-    <ion-icon class="fa-battery-2"></ion-icon>   
- </button>   
- <button ion-button icon-only large color="secondary">    
-    <ion-icon class="fa-battery-full"></ion-icon>   
- </button>
+  
+
+    <ion-list *ngFor="let contato of contatos">
+      <ion-item-sliding>
+        <ion-item>
+         
+          <h2>{{ contato.nome }}</h2>
+          <h3>{{ contato.email }}</h3>
+          <p>{{  contato.whatsapp}}</p>
+        </ion-item>
+      
+        <ion-item-options side="right">
+          <button ion-button color="primary" (click)="cadidatoEditar(contato)">
+              <ion-icon name="logo-angular"></ion-icon>
+            Editar
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
 </ion-content>
+
