@@ -70,7 +70,7 @@ $colors: (
 // so that the above variables are used and Ionic's
 // default are overridden.
 
-@import "ionic.theme.default";
+@import "ionic.theme.dark";
 
 
 // Ionicons
@@ -84,5 +84,39 @@ $colors: (
 // Fonts
 // --------------------------------------------------
 
-@import "roboto";
-@import "noto-sans";
+//@import "roboto";
+//@import "noto-sans";
+
+@font-face{
+
+  font-family: 'Qwigley', cursive;
+  font-style:normal;
+  src:url('../assets/fonts/Qwigley-Regular.ttf');
+
+  }
+
+  @font-face{
+
+    font-family: 'Wire One', sans-serif;
+    font-style:normal;
+    src:url('../assets/fonts/Qwigley-Regular.ttf');
+  
+    }
+
+
+  @font-face{
+
+    font-family: 'Swanky and Moo Moo', cursive;
+    font-style:normal;
+    src:url('../assets/fonts/SwankyandMooMoo.ttf');
+
+    }
+
+
+
+ h1,h2,h3,h4,p,button,ion-title{ 
+
+  font-family: 'Swanky and Moo Moo', cursive;
+  font-weight: 400;
+   
+  }
