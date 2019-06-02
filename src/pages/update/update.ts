@@ -20,7 +20,9 @@ export class UpdatePage {
   ) {
 
     this.formGroup = this.formBuilder.group({
-      nome: [null, [Validators.required, Validators.minLength(5), Validators.maxLength(120)]]
+      nome: [null, [Validators.required, Validators.minLength(5), Validators.maxLength(120)]],
+      email: [null, [Validators.required, Validators.minLength(5), Validators.maxLength(120)]],
+      whatsapp: [null, [Validators.required, Validators.minLength(5), Validators.maxLength(120)]]
     })
 
   }
@@ -33,6 +35,8 @@ export class UpdatePage {
   popularCampos(dados){
     
     this.formGroup.controls['nome'].setValue(dados.nome);
+    this.formGroup.controls['email'].setValue(dados.email);
+    this.formGroup.controls['whatsapp'].setValue(dados.whatsapp);
   }
 
 }
