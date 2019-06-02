@@ -9,11 +9,12 @@
     "clean": "ionic-app-scripts clean",
     "build": "ionic-app-scripts build",
     "lint": "ionic-app-scripts lint"
-  },"config": {    
-    "ionic_copy": "./config/copy.config.js",    
-    "ionic_sass": "./config/sass.config.js"  
- },  
- "dependencies": {
+  },
+  "config": {
+    "ionic_copy": "./config/copy.config.js",
+    "ionic_sass": "./config/sass.config.js"
+  },
+  "dependencies": {
     "@angular/animations": "5.2.11",
     "@angular/common": "5.2.11",
     "@angular/compiler": "5.2.11",
