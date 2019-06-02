@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 
+
 @IonicPage({})
 @Component({
   selector: 'page-cadastro',
@@ -11,6 +12,20 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class CadastroPage {
 
   formGroup: FormGroup;
+
+    sexos = [
+    {
+      "id": "1",
+      "desc": "Masculino"
+    },
+    {
+      "id": "2",
+      "desc": "Feminino"
+    }
+  ];
+
+  sexoSelecionado:any;
+
 
   constructor(public navCtrl: NavController,
     public formBuilder: FormBuilder,
@@ -21,13 +36,10 @@ export class CadastroPage {
     this.formGroup = this.formBuilder.group({
       nome: [null, [Validators.required, Validators.minLength(5), Validators.maxLength(120)]],
       email: [null, [Validators.required, Validators.minLength(5), Validators.maxLength(120)]],
-      whatsapp: [null, [Validators.required, Validators.minLength(5), Validators.maxLength(120)]]
+      whatsapp: [null, [Validators.required, Validators.minLength(5), Validators.maxLength(120)]],
+      sexo: [null, [Validators.required, Validators.minLength(5), Validators.maxLength(120)]]
     })
-
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CadastroPage');
+   
   }
 
 }
