@@ -10,6 +10,8 @@ export class TabsPage {
 
   tab1Root = 'HomePage';
   tab2Root = 'CadastroPage';
+  tab3Root = 'Cadastro2Page';
+  tab4Root = 'ListarPage';
   
   constructor() {
 

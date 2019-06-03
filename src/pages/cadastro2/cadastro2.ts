@@ -1,34 +1,40 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { IonicSelectableComponent } from 'ionic-selectable';
-
-
+import { SelectSearchableComponent } from 'ionic-select-searchable';
 
 @IonicPage({})
 @Component({
-  selector: 'page-cadastro',
-  templateUrl: 'cadastro.html',
+  selector: 'page-cadastro2',
+  templateUrl: 'cadastro2.html',
 })
-export class CadastroPage {
-  
+
+
+export class Cadastro2Page {
+
+  @ViewChild('mySelect') selectComponent: SelectSearchableComponent;
+
   formGroup: FormGroup;
-  
-    sexos = [
+
+  user = null;
+  userIds = [];
+
+  users = [
     {
-      "id": "1",
-      "desc": "Masculino"
+      "id": 0,
+      "nome": "Eneylton Barros",
+      "cidade": "São Luís"
     },
     {
-      "id": "2",
-      "desc": "Feminino"
+      "id": 1,
+      "nome": "Maria Barros",
+      "cidade": "São Luís"
     }
+
   ];
 
-  sexoSelecionado:any;
 
-
-
+  sexoSelecionado: any;
 
   constructor(public navCtrl: NavController,
     public formBuilder: FormBuilder,
@@ -40,17 +46,21 @@ export class CadastroPage {
       nome: [null, [Validators.required, Validators.minLength(5), Validators.maxLength(120)]],
       email: [null, [Validators.required, Validators.minLength(5), Validators.maxLength(120)]],
       whatsapp: [null, [Validators.required, Validators.minLength(5), Validators.maxLength(120)]],
-      sexo: [null, [Validators.required, Validators.minLength(5), Validators.maxLength(120)]]
+      user: [null, [Validators.required, Validators.minLength(5), Validators.maxLength(120)]]
     })
 
-     
   }
 
-  sexoChange(event:{
-    component: IonicSelectableComponent,
-    value:any
-  }){
+  sexoChange(event: {
+    component: SelectSearchableComponent,
+    value: any
+  }) {
     console.log("Resposta: ", event.component);
     console.log("Valor: ", event.value);
+  }
+
+
+  openFromCode(){
+    this.selectComponent.open();
   }
 }
